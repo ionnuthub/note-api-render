@@ -10,7 +10,10 @@
 
     "build:ui": "powershell Remove-Item -Recurse -Force dist 2>$null && cd ../part2-notes-frontend && npm run build && powershell Copy-Item dist -Recurse ../note-api-render",
 
-    "deploy:full": "npm run build:ui && git add . && git commit -m \"ui update\" && git push"
+    "deploy:full": "npm run build:ui && git add . && git commit -m \"ui update\" && git push",
+
+    "deploy:backend": "git add . && git commit -m \"backend update\" && git push",
+    "deploy:all": "npm run build:ui && npm run deploy:backend"
   },
   "author": "Ionut Raducu",
   "license": "ISC",
