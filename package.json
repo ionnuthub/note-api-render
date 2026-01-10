@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "build:ui": "powershell Remove-Item -Recurse -Force dist 2>$null && cd ../part2-notes-frontend && npm run build && powershell Copy-Item dist -Recurse ../note-api-render",
+    "build:ui": "rm -rf dist && cd ../part2-notes-frontend && npm run build && cp -r dist ../note-api-render/",
 
     "deploy:full": "npm run build:ui && git add . && git commit -m \"ui update\" && git push",
 
